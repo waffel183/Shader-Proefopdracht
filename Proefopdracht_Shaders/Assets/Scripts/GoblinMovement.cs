@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GoblinMovement : MonoBehaviour {
 
-    Animator Animator;
+    Animator Anim;
     [SerializeField]
     //private Animation running;
     //private Animation Idle;
@@ -12,7 +12,7 @@ public class GoblinMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Animator = GetComponent<Animator>();
+        Anim = GetComponent<Animator>();
 	}
 
     void Movement()
@@ -21,11 +21,11 @@ public class GoblinMovement : MonoBehaviour {
         var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
         if(z != 0)
         {
-            Animator.Play("Run_State");
+            Anim.SetTrigger("Idle_To_Run");
         }
         else
         {
-            Animator.Play("Ilde_State");
+            Anim.SetTrigger("Run_To_Idle");
         }
 
         transform.Rotate(0, x, 0);
@@ -34,7 +34,6 @@ public class GoblinMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
         Movement();
 	}
 }

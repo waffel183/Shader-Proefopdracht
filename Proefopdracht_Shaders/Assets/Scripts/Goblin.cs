@@ -18,24 +18,27 @@ public class Goblin : MonoBehaviour {
 	void Update () {
         rend.material.SetFloat("_Amount", FatAmount);
 
-        if(FatAmount < -1 || FatAmount > 1)    //not valid amounts
+        if (FatAmount < -1)    //not valid amounts
         {
             _timer = -1; //disable timer
+        }
+        else if (_timer <= -1 && FatAmount >= -1){
+            _timer = 100;
         }
 
         if (_timer == 0)
         {
-            FatAmount -= 0.1f;
+            FatAmount -= 0.2f;
             _timer = 100;
         }
         else _timer -= 1;
 	}
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter(Collider col)
     {
-        Debug.Log("TRIGGERED!!!");
         if(col.gameObject.tag == "Food")
         {
-            FatAmount += 0.5f;
+            FatAmount += 1.0f;
+            Destroy(col.gameObject);
         }
     }
 }
