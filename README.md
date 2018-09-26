@@ -3,9 +3,9 @@
 Ik heb shaders gebruikt om een character dikker of dunner te maken in relatie met hoeveel de character heeft gegeten 
 
 ## Software Anaylse 
-Ik heb gekozen voor Unity 3D omdat er veel voorbeelden voor zijn, veel assets voor zijn
+Ik heb gekozen voor Unity 3D omdat er veel voorbeelden en veel assets voor zijn.
 
-en omdat het vereist is in de proefopdracht
+En omdat het vereist is in de proefopdracht
 
 ## Leerdoelen 
 - Shaders kunnen maken
